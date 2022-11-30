@@ -4,17 +4,25 @@ class Turn {
         this.card = card
     }
     returnGuess() {
-        return this.guess
+        return this.userGuess
     }
-    // returnCard() {
-
-    // }
-    // evaluateGuess() {
-
-    // }
-    // giveFeedback() {
-
-    // }
+    returnCard() {
+        return this.card
+    }
+    evaluateGuess() {
+        if(this.userGuess === this.card.correctAnswer) {
+            return true
+        } else {
+            return false
+        }
+    }
+    giveFeedback() {
+        if(this.evaluateGuess()) {
+            return "Correct!"
+        } else {
+            return "Incorrect :("
+        }
+    }
 }
 
 module.exports = Turn
