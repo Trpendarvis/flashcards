@@ -5,7 +5,6 @@ class Round {
         this.deck = deck
         this.turns = 0
         this.incorrectGuesses = []
-        // console.log("look here",this.incorrectGuesses)
     }
     
     returnCurrentCard() {
@@ -14,8 +13,6 @@ class Round {
 
     takeTurn(userGuess) {
         let currentTurn = new Turn(this.deck.cards[this.turns], userGuess)
-        // console.log("userGuess at take turn", userGuess) 
-        // console.log("Im looking for this!!!", this.deck.cards[this.turns])
         if (!currentTurn.evaluateGuess()) {
             this.incorrectGuesses.push(this.deck.cards[this.turns].id)
         }

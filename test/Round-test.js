@@ -15,7 +15,6 @@ describe("Round", function() {
     let turn
     let round
   
-
     beforeEach(() => {
     card1 = new Card (1, "random question1", ["r1Guess1", "r1Guess2", "r1Guess3"], "r1Guess3")
     card2 = new Card (2, "random question2", ["r2Guess1", "r2Guess2", "r2Guess3"], "r2Guess3")
@@ -24,7 +23,6 @@ describe("Round", function() {
     deck = new Deck([card1, card2, card3, card4])
     round = new Round(deck)
     turn = new Turn(card1, "r1Guess3")
-    // console.log("card1 is?", card1)
     })
 
     it("Should be a function", function() {
@@ -37,7 +35,6 @@ describe("Round", function() {
 
     it("should have a deck of cards", function() {
         expect(round.deck).to.equal(deck)
-        // console.log("this should be the deck", deck)
     })
 
     it("Should return the current card in the deck", function() {
@@ -57,12 +54,9 @@ describe("Round", function() {
     it("Should store incorrect guesses in an array", function() {
         expect(round.incorrectGuesses).to.deep.equal([])
         round.takeTurn("r1Guess2")
-//this is in the first array and is incorrect
         expect(round.incorrectGuesses).to.deep.equal([1])
         round.takeTurn("r2Guess3")
-//this is in the second array and is correct 
         expect(round.incorrectGuesses).to.deep.equal([1])
-//so what is needed is 1 correct and 1 incorrect for this to work/ when testing other corrects do not work why???
     })
     
     it('Should evaluate the guess and return feedback when taking a turn', function() {
@@ -74,12 +68,10 @@ describe("Round", function() {
         round.takeTurn("r1Guess2")
         round.takeTurn("r2Guess3")
         expect(round.calculatePercentCorrect()).to.equal(50)
-//one wrong one right = 50%
 
         round.takeTurn("r2Guess3")
         round.takeTurn("r3Guess3")
         expect(round.calculatePercentCorrect()).to.equal(25)
-//both correct but already at 50% from last guess so avg = 75%
     })
 
     it("Should say when round is over and what percentage was correct", function() {
@@ -87,5 +79,4 @@ describe("Round", function() {
         round.takeTurn("r2Guess3")
         expect(round.endRound()).to.equal("** Round over! ** You answered 50% of the questions correctly!")
     })
-
 })

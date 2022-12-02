@@ -30,9 +30,7 @@ class Game {
     let deckWithCards = prototypeQuestions.map((cardDataObj) => {
       return new Card(cardDataObj.id, cardDataObj.question, cardDataObj.answers, cardDataObj.correctAnswers)
     });
-    console.log("!!!!!!!!!!!!",deckWithCards)
     return deckWithCards;
-    //need to iterate over the prototypeQuestions and push into a empty card array
   }
 
   createDeck(cards) {
@@ -51,7 +49,6 @@ class Game {
     const round = this.createRound(deck);
     this.printMessage(deck, round);
     this.printQuestion(round);
-    //this function will invoke all other functions so that the game can be played
   }
 }
 module.exports = Game;
