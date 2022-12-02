@@ -17,9 +17,9 @@ describe("Deck", function() {
 
     beforeEach(() => {
     card1 = new Card (1, "random question1", ["r1Guess1", "r1Guess2", "r1Guess3"], "r1Guess3")
-    card2 = new Card (1, "random question2", ["r2Guess1", "r2Guess2", "r2Guess3"], "r2Guess3")
-    card3 = new Card (1, "random question3", ["r3Guess1", "r3Guess2", "r3Guess3"], "r3Guess3")
-    card4 = new Card (1, "random question4", ["r4Guess1", "r4Guess2", "r4Guess3"], "r4Guess3")
+    card2 = new Card (2, "random question2", ["r2Guess1", "r2Guess2", "r2Guess3"], "r2Guess3")
+    card3 = new Card (3, "random question3", ["r3Guess1", "r3Guess2", "r3Guess3"], "r3Guess3")
+    card4 = new Card (4, "random question4", ["r4Guess1", "r4Guess2", "r4Guess3"], "r4Guess3")
     cards = [card1, card2, card3, card4]
     deck = new Deck(cards)
     //have questions about scope and hooking? why can I not have these as global vars?
