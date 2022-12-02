@@ -78,7 +78,7 @@ describe("Round", function() {
 
         round.takeTurn("r2Guess3")
         round.takeTurn("r3Guess3")
-        expect(round.calculatePercentCorrect()).to.equal(75)
+        expect(round.calculatePercentCorrect()).to.equal(25)
 //both correct but already at 50% from last guess so avg = 75%
     })
 

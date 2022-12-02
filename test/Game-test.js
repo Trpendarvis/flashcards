@@ -1,13 +1,15 @@
-// const data = require('./data');
-// const prototypeQuestions = data.prototypeData;
-// const util = require('./util');
+const chai = require('chai')
+const expect = chai.expect
 
-// const Game = require('../src/Game');
+const data = require('../src/data');
+const prototypeQuestions = data.prototypeData;
+const util = require('../src/util');
+const Game = require('../src/Game');
 
-// describe('Game', function() {
+describe('Game', function() {
 
-//     it('should be a function', function() {
-//       const game = new Game();
-//       expect(Game).to.be.a('function');
-//     });
-// });
+    it('should be a function', function() {
+      const game = new Game();
+      expect(Game).to.be.a('function');
+    });
+});
