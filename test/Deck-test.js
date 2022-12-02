@@ -4,9 +4,6 @@ const expect = chai.expect
 const Deck = require('../src/Deck.js')
 const Card = require('../src/Card.js')
 
-
-
-
 describe("Deck", function() {
     let card1
     let card2
@@ -22,7 +19,7 @@ describe("Deck", function() {
     card4 = new Card (4, "random question4", ["r4Guess1", "r4Guess2", "r4Guess3"], "r4Guess3")
     cards = [card1, card2, card3, card4]
     deck = new Deck(cards)
-    //have questions about scope and hooking? why can I not have these as global vars?
+
     })
 
     it("Should be a function", function() {
@@ -34,7 +31,6 @@ describe("Deck", function() {
     })
     it("Should have an array of cards by default", function() {
         expect(deck.cards).to.equal(cards)
-        // console.log("array",deck.cards)
     })
 
     it("Should track how many cards are in the deck", function() {
